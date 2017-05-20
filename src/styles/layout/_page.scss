@@ -1,0 +1,29 @@
+.page__title {
+  line-height: 1em;
+  position: relative;
+  font-family: "League Gothic";
+  letter-spacing: 2px;
+  font-size: 60px;
+  text-transform: uppercase;
+  margin: 30px 0 30px 0;
+
+  @at-root #{&}-white {
+      color: white;
+  }
+}
+
+.page__head {
+  padding: 20px;
+
+}
+
+.page__head__nav {
+  background: darken($gray-darker, 50%);
+}
+
+.page__head-dark {
+  background: darken($gray-darker, 30%);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//+/JhAzIGMUDhRrYgigq4QbgyEAwgChmkuDn1MilAAAAABJRU5ErkJggg==);
+
+
+}

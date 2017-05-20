@@ -6,6 +6,7 @@
 import { combineReducers } from 'redux';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { routerReducer} from 'react-router-redux'
+import comicsReducer from './Comics/reducer';
 
 /*
  * routeReducer
@@ -22,6 +23,7 @@ import { routerReducer} from 'react-router-redux'
 export default function createReducer(asyncReducers) {
   return combineReducers({
     router: routerReducer,
+    comics: comicsReducer,
     ...asyncReducers,
   });
 }

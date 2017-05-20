@@ -77,7 +77,7 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebookincubator/create-react-app/issues/253
-    modules: ['node_modules', paths.appNodeModules].concat(paths.nodePaths),
+    modules: [paths.appSrc,'node_modules', paths.appNodeModules],
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
@@ -158,6 +158,11 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]',
         },
       },
+      //fonts
+      { 
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, 
+        loader: 'file-loader?name=fonts/[name].[ext]' 
+      }
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,

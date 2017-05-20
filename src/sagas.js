@@ -5,9 +5,10 @@
  * Taken from https://gist.github.com/hoschi/6538249ad079116840825e20c48f1690
  */
 import { take, fork, cancel } from 'redux-saga/effects';
+import rootComicsSaga from 'Comics/sagas';
 
 const sagas = [
-
+  rootComicsSaga
 ];
 
 export const CANCEL_SAGAS_HMR = 'CANCEL_SAGAS_HMR';

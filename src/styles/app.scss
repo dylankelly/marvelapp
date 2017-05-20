@@ -1,1 +1,23 @@
+@import "~bootstrap/scss/_variables.scss";
+
+$gray-base:              #36393D !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              lighten($gray-base, 20%) !default;   // #333
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:           lighten($gray-base, 72%) !default; // #eee
+
+$brand-primary:         #2F72B4 !default; // #337ab7
+$brand-primary-darker:  #37495E !default; // #337ab7
+$brand-success:         #55D09E !default;
+$brand-info:            #5990E3 !default;
+$brand-warning:         #F3C50B !default;
+$brand-danger:          #DA573C !default;
+
 @import "~bootstrap/scss/bootstrap.scss";
+@import "./base/_typography";
+
+@import "./components/_PageHeader";
+@import "./components/_Comic";
+
+@import "./layout/_page";
