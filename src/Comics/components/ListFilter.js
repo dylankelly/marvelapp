@@ -6,7 +6,6 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import 'react-select/dist/react-select.css';
 import Select from 'react-select';
 import { debounce } from 'lodash';
 import { doUpdateComicsFilter } from 'Comics/actions';
