@@ -37,6 +37,7 @@ export default function withCharacterData(WrappedComponent) {
   CharacterDetailContainer.propTypes = {
     dispatch: PropTypes.func.isRequired,
     character: PropTypes.object.isRequired,
+    loading: PropTypes.bool,
   };
 
   

@@ -6,7 +6,7 @@ export const selectComics = (state) => {
   }
   return [];
 }
-export const selectComicById = (state, selectedId) => state.comics.byId ? state.comics.byId[selectedId] : [];
+export const selectComicById = (state, selectedId) => state.comics.byId ? state.comics.byId[selectedId] : {};
 
 export const comicsListLoading = (state) => state.comics.loading;
 

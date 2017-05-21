@@ -18,7 +18,9 @@ function ComicDetail({comic}) {
           <div className="col-4">
             <div className="comic_list_item__thumb">
               <div className="comic_list_item__thumb_border"></div>
-              <img className="comic_list_item__thumb_image" src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension} `} alt=""/>
+              {comic.thumbnail && comic.thumbnail.path &&
+                <img className="comic_list_item__thumb_image" src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension} `} alt=""/>
+              }
             </div>
           </div>
           <div className="col-8">

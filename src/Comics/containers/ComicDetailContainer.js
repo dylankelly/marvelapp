@@ -8,7 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from 'Components/Loader';
-import { selectComicById } from 'Comics/selectors';
+import { selectComicById, comicsListLoading } from 'Comics/selectors';
 import { doFetchComicRequested } from 'Comics/actions';
 
 export default function withComicData(WrappedComponent) {
@@ -37,10 +37,11 @@ export default function withComicData(WrappedComponent) {
   ComicDetailContainer.propTypes = {
     dispatch: PropTypes.func.isRequired,
     comic: PropTypes.object.isRequired,
+    loading: PropTypes.bool,
   };
   
   function mapStateToProps(state, props){
-    const loading = false;
+    const loading = comicsListLoading(state);
     const comic = selectComicById(state, props.match.params.comicid);
     return {
       loading,
