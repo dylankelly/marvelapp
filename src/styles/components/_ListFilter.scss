@@ -1,12 +1,37 @@
 .comic_filter {
-	background: #000;
-	padding: 0 20px;
-	line-height: 2em;
-	color: white;
+  background: #000;
+  padding: 0 20px;
+  line-height: 2em;
+  color: white;
 
-	.Select-control {
-	    border-radius: 0;
-	    border: 2px solid white;
-	    margin: 4px 0;
-	}
+  .Select-control {
+      border-radius: 0;
+      border: 2px solid white;
+      margin: 4px 0;
+  }
+
+  .input-group-addon {
+    background: transparent;
+  }
+
+  @at-root #{&}__label {
+    line-height: 48px;
+    margin-bottom: 0;
+  }
+
+  @at-root #{&}__search {
+    input[type="text"] {
+      width: 100%;
+      border-radius: 0;
+      border: 2px solid white;
+      margin: 4px 0;
+      @include bodyFont;
+
+      &::placeholder{
+        @include bodyFont;
+        padding-left: 4px;
+      }
+    }
+
+  }
 }

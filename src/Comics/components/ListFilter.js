@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-select/dist/react-select.css';
 import Select from 'react-select';
+import { debounce } from 'lodash';
 import { doUpdateComicsFilter } from 'Comics/actions';
 import getApiReq from 'API';
 
@@ -21,6 +22,7 @@ class ListFilter extends Component {
       filteredSeries: [],
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSearch = debounce(this.handleSearch.bind(this), 500);
   }
 
   getCharacters(input) {
@@ -42,27 +44,42 @@ class ListFilter extends Component {
 
 
   handleChange(value) {
-    this.props.dispatch(doUpdateComicsFilter(value));
+    this.props.dispatch(doUpdateComicsFilter({ characters: [...value] }));
+  }
+
+  handleSearch(value) {
+    this.props.dispatch(doUpdateComicsFilter({ search: value }));
   }
  
   render() {
 
     return (
       <div className="comic_filter row">
-        <div className="col">
-          <h4>FILTER :</h4>
+        <div className="col-6">
+          <h4 className="comic_filter__label">FILTER :</h4>
         </div>
-        <div className="col">
-          {this.props.filter && 
-            <Select.Async
-              multi
-              name="characters"
-              autoload={false}
-              value={this.props.filter.characters}
-              onChange={this.handleChange}
-              loadOptions={this.getCharacters}
-            />
-          }
+        <div className="col-6 row">
+          <div className="col-6">
+            {this.props.filter && 
+              <Select.Async
+                multi
+                name="characters"
+                placeholder="Filter Characters"
+                autoload={false}
+                value={this.props.filter.characters}
+                onChange={this.handleChange}
+                loadOptions={this.getCharacters}
+              />
+            }
+          </div>
+
+          <div className="col-6">
+            <div className="input-group comic_filter__search">
+              <span className="input-group-addon"><i className="fa fa-search"></i></span>
+              <input type="text" onChange={(e) => this.handleSearch(e.target.value)} className="form-control" placeholder="Search" type="text"/>
+            </div>
+            
+          </div>
         </div>
         
       </div>  

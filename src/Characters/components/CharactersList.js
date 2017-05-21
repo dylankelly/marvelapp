@@ -16,9 +16,7 @@ function CharactersList({ characters }) {
       {
          rows.map((characters, index) => 
            <div key={index} className="row">
-             {characters.map((character) => 
-               <CharacterListItem key={character.id} character={character} />
-             )}
+             {characters.map((character) => character ? <CharacterListItem key={character.id} character={character} /> : <div>...loading</div> )}
            </div>
          )
        }

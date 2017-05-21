@@ -16,7 +16,11 @@ $border-radius:          0 !default;
 $border-radius-lg:       0 !default;
 $border-radius-sm:       0 !default;
 
+$fa-font-path: "~font-awesome/fonts";
+
 @import "~bootstrap/scss/bootstrap.scss";
+@import "~font-awesome/scss/font-awesome";
+
 @import "./base/_typography";
 @import "./base/_mixins";
 
@@ -25,7 +29,12 @@ $border-radius-sm:       0 !default;
 @import "./components/_NavBar";
 @import "./components/_ComicDetail";
 @import "./components/_Character";
+@import "./components/_HeroImage";
 @import "./components/_ListFilter";
 @import "./components/_ListItem";
+@import "./components/_Loader";
 
 @import "./layout/_page";
+
+@import "./pages/_comic";
+@import "./pages/_character";

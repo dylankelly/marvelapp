@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ComicDetailContainer from 'Comics/containers/ComicDetailContainer';
 import ComicDetail from 'Comics/components/ComicDetail';
-import { Link } from 'react-router-dom';
+import ComicCharactersContainer from './../containers/ComicCharactersContainer';
 
 class Comic extends Component {
   render() {
@@ -15,13 +16,18 @@ class Comic extends Component {
           </div>
         </div>
         <div className="page__head page__head-dark">
+          <ComicDetail comic={comic} />
           <div className="container">
-            <ComicDetail comic={comic} />
+            <ComicCharactersContainer comicId={comic.id} />
           </div>
         </div>
       </div>
     );
   }
 }
+
+Comic.propTypes = {
+  comic: React.PropTypes.object,
+};
 
 export default ComicDetailContainer(Comic);

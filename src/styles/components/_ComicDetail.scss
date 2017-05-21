@@ -1,10 +1,13 @@
 .comic_detail {
-
-
+  background: darken($gray-darker, 30%);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//+/JhAzIGMUDhRrYgigq4QbgyEAwgChmkuDn1MilAAAAABJRU5ErkJggg==);
+  padding: 40px;
+  
   @at-root #{&}__desc {
     padding: 20px;
     color: white;
   }
 
+  
 
 }

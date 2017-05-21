@@ -18,7 +18,7 @@ function ComicListItem({comic}) {
           </div>
           <div className="list_item__desc">
             <h4 className="list_item__title">{comic.title}</h4>
-            {comic.creators.items.length > 0 && comic.creators.items
+            {/*comic.creators.items.length > 0 && comic.creators.items
               .filter((author) => author.role === 'writer')
               .map((author) => {
                 const name = author.name.split(/\s+/);
@@ -27,7 +27,7 @@ function ComicListItem({comic}) {
                   <Link to={`/creators/${key}`}><p><small key={key}>{name[name.length -1]}</small></p></Link>
                 )
               }
-            )}
+            )*/}
           </div>
           <a href="#" className="list_item__link btn btn-primary btn-marvel"><span>View</span></a>
         </div>

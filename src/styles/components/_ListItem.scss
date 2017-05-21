@@ -44,10 +44,14 @@
 
     .list_item__thumb_image {
       @include circle;
+      min-height: 204px;
+      min-width: 204px;
     }
 
     .list_item__thumb_border {
       @include circle;
+      min-height: 204px;
+      min-width: 204px;
     }
 
   }
@@ -71,7 +75,7 @@
     border: 1px solid #000;
     -webkit-transition: border .2s linear;
     transition: border .2s linear;
-    z-index: 1;
+    z-index: 0;
 
     &:hover{
       border: 4px solid black;
@@ -80,7 +84,7 @@
 
   @at-root #{&}__desc {
     margin-top: 20px;
-    min-height: 3em;
+    min-height: 5em;
   }
 
 

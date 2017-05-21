@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 /* Regular */
 @font-face {
@@ -51,16 +53,24 @@
     font-style: italic;
 }
 
+@mixin headerFont {
+  font-family: 'League Gothic';
+}
+
+@mixin bodyFont {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+}
+
 
 h1,h2,h3,h4,h5 {
-  font-family: 'League Gothic';
+  @include headerFont;
 }
 
 
 body {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 100;
-  font-size: 1em;
+  @include bodyFont;
 }
 
 strong {

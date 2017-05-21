@@ -10,8 +10,8 @@ const initialState = {
   ids: [],
   filter: {
     characters: [
-      { label: 'Storm', value: 1009629 },
     ],
+    search: '',
   },
   loading: false,
 };
@@ -24,7 +24,7 @@ export default function reducer(state = initialState, action) {
         loading: true,
         filter: {
           ...state.filter,
-          characters: [...action.payload],
+          ...action.payload,
         },
       }
     case FETCH_COMICS_REQUESTED:

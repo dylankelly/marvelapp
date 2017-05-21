@@ -1,3 +1,8 @@
+.page {
+  background-color: #000;
+  min-height: 100vh;
+}
+
 .page__title {
   line-height: 1em;
   position: relative;
@@ -12,10 +17,6 @@
   }
 }
 
-.page__head {
-  padding: 20px;
-
-}
 
 .page__head__nav {
   background: white;
@@ -31,8 +32,5 @@
 }
 
 .page__head-dark {
-  background: darken($gray-darker, 30%);
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//+/JhAzIGMUDhRrYgigq4QbgyEAwgChmkuDn1MilAAAAABJRU5ErkJggg==);
-
 
 }

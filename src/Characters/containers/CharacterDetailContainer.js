@@ -7,21 +7,21 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Loader from 'Components/Loader';
-import { selectComicById } from 'Comics/selectors';
-import { doFetchComicRequested } from 'Comics/actions';
+import { selectCharacterById, charactersListLoading } from 'Characters/selectors';
+import { doFetchCharacterRequested } from 'Characters/actions';
 
-export default function withComicData(WrappedComponent) {
+export default function withCharacterData(WrappedComponent) {
 
-  class ComicDetailContainer extends React.Component {
+  class CharacterDetailContainer extends React.Component {
 
     componentWillMount() {
-     this.props.dispatch( doFetchComicRequested(this.props.match.params.comicid));
+     this.props.dispatch( doFetchCharacterRequested(this.props.match.params.characterid));
     }
 
     render() {
       if(this.props.loading){
         return <Loader />;
-      } else if (this.props.comic) {
+      } else if (this.props.character) {
         return <WrappedComponent {...this.props} />;
       } else {
         return (
@@ -34,11 +34,11 @@ export default function withComicData(WrappedComponent) {
   }
   
   function mapStateToProps(state, props){
-    const loading = false;
-    const comic = selectComicById(state, props.match.params.comicid);
+    const loading = charactersListLoading(state);
+    const character = selectCharacterById(state, props.match.params.characterid);
     return {
       loading,
-      comic,
+      character,
     };
   }
 
@@ -48,5 +48,5 @@ export default function withComicData(WrappedComponent) {
     };
   }
 
-  return connect(mapStateToProps, mapDispatchToProps)(ComicDetailContainer);
+  return connect(mapStateToProps, mapDispatchToProps)(CharacterDetailContainer);
 }
