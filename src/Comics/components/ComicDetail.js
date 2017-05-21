@@ -5,11 +5,10 @@
 */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const writers = (creators) => creators.filter((author) => author.role === 'writer');
-const coverArtists = (creators) => creators.filter((author) => author.role === 'writer');
 
 function ComicDetail({comic}) {
   return (
@@ -43,7 +42,7 @@ function ComicDetail({comic}) {
 }
 
 ComicDetail.propTypes = {
-
+  comic: PropTypes.object.isRequired,
 };
 
 export default ComicDetail;

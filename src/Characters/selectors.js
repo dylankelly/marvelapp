@@ -14,9 +14,10 @@ export const selectCharactersByComicId = (state, comicId) =>  {
     const characterIds = comic.characters.items.map((char) => parseInt(char.resourceURI.substring(char.resourceURI.lastIndexOf("/") + 1), 10) );
 
     const characters = characterIds.map((id) => {
-      if(state.characters.byId[id] != undefined) {
+      if(state.characters.byId[id] !== undefined) {
         return state.characters.byId[id]
       }
+      return {};
     });
 
     return characters;

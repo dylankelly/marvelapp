@@ -4,7 +4,8 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from 'Components/Loader';
 import { selectCharacterById, charactersListLoading } from 'Characters/selectors';
@@ -32,6 +33,12 @@ export default function withCharacterData(WrappedComponent) {
       }
     }
   }
+
+  CharacterDetailContainer.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    character: PropTypes.object.isRequired,
+  };
+
   
   function mapStateToProps(state, props){
     const loading = charactersListLoading(state);

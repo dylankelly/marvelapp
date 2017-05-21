@@ -2347,7 +2347,7 @@ function comics(id) {
     }
   };
   if (id) {
-    return data.find(app => data.id == id);
+    return data.find(app => data.id === id);
   }
 
   return data;

@@ -14,12 +14,12 @@ function CharacterListItem({character}) {
         <div className="list_item__inner">
           <div className="list_item__thumb list_item__thumb-circle">
             <div className="list_item__thumb_border"></div>
-            <img className="list_item__thumb_image" src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension} `} alt=""/>
+            <img className="list_item__thumb_image" src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension} `} alt={character.name}/>
           </div>
           <div className="list_item__desc">
             <h4 className="list_item__title">{character.name}</h4>
           </div>
-          <a href="#" className="list_item__link btn btn-primary btn-marvel"><span>View</span></a>
+          <button className="list_item__link btn btn-primary btn-marvel"><span>View</span></button>
         </div>
       </Link>
     </div>

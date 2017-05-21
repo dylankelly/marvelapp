@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { doFetchComicCharactersRequested } from 'Characters/actions';
 import { selectCharactersByComicId, charactersListLoading } from 'Characters/selectors';
-import ComicListItem from './../components/ComicListItem';
-import { chunk } from 'lodash';
 import Loader from 'Components/Loader';
 import CharactersList from 'Characters/components/CharactersList';
 
@@ -32,14 +31,13 @@ export class ComicCharactersContainer extends Component { // eslint-disable-line
 }
 
 ComicCharactersContainer.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
-  characters: React.PropTypes.array,
-  comicId: React.PropTypes.number,
+  dispatch: PropTypes.func.isRequired,
+  characters: PropTypes.array,
+  comicId: PropTypes.number,
 };
 
 function mapStateToProps(state, props) {
   const characters = selectCharactersByComicId(state, props.comicId);
-  console.log('characters by comicId', characters);
   const loading = charactersListLoading(state);
 
   return {

@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function ComicListItem({comic}) {
@@ -29,7 +30,7 @@ function ComicListItem({comic}) {
               }
             )*/}
           </div>
-          <a href="#" className="list_item__link btn btn-primary btn-marvel"><span>View</span></a>
+          <button className="list_item__link btn btn-primary btn-marvel"><span>View</span></button>
         </div>
       </Link>
     </div>
@@ -37,7 +38,7 @@ function ComicListItem({comic}) {
 }
 
 ComicListItem.propTypes = {
-
+  comic: PropTypes.object.isRequired,
 };
 
 export default ComicListItem;

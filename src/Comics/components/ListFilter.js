@@ -5,7 +5,7 @@
 */
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import 'react-select/dist/react-select.css';
 import Select from 'react-select';
 import { debounce } from 'lodash';
@@ -76,7 +76,7 @@ class ListFilter extends Component {
           <div className="col-6">
             <div className="input-group comic_filter__search">
               <span className="input-group-addon"><i className="fa fa-search"></i></span>
-              <input type="text" onChange={(e) => this.handleSearch(e.target.value)} className="form-control" placeholder="Search" type="text"/>
+              <input type="text" onChange={(e) => this.handleSearch(e.target.value)} className="form-control" placeholder="Search" />
             </div>
             
           </div>
@@ -88,7 +88,8 @@ class ListFilter extends Component {
 }
 
 ListFilter.propTypes = {
-  dispatch: React.PropTypes.func,
+  dispatch: PropTypes.func,
+  filter: PropTypes.object,
 };
 
 export default ListFilter;

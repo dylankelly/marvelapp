@@ -5,8 +5,8 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import CharacterDetailContainer from 'Characters/containers/CharacterDetailContainer';
 
 
@@ -36,8 +36,8 @@ function Character({character}) {
 }
 
 Character.propTypes = {
-  character: React.PropTypes.object,
-  loading: React.PropTypes.bool,
+  character: PropTypes.object,
+  loading: PropTypes.bool,
 };
 
 export default CharacterDetailContainer(Character);

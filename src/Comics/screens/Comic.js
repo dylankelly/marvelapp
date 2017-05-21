@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ComicDetailContainer from 'Comics/containers/ComicDetailContainer';
 import ComicDetail from 'Comics/components/ComicDetail';
@@ -27,7 +28,7 @@ class Comic extends Component {
 }
 
 Comic.propTypes = {
-  comic: React.PropTypes.object,
+  comic: PropTypes.object,
 };
 
 export default ComicDetailContainer(Comic);

@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { doFetchCharactersRequested } from './../actions';
 import { selectCharacters, charactersListLoading } from './../selectors';
 import CharactersList from './../components/CharactersList';
-import { chunk } from 'lodash';
-import ListFilter from 'Comics/components/ListFilter';
-
+import Loader from 'Components/Loader';
 export class CharactersListContainer extends Component { // eslint-disable-line react/prefer-stateless-function
   
   componentWillMount() {
     this.props.dispatch(doFetchCharactersRequested());
-  }
-
-  filter(filterVal) {
-    console.log(filterVal);
   }
 
   render() {
@@ -21,7 +16,7 @@ export class CharactersListContainer extends Component { // eslint-disable-line 
 
     if (this.props.loading) {
       return (
-        <h2>...loading</h2>
+        <Loader />
       )
     } else {
       return (
@@ -34,7 +29,8 @@ export class CharactersListContainer extends Component { // eslint-disable-line 
 }
 
 CharactersListContainer.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  characters: PropTypes.array.isRequired,
 };
 
 function mapStateToProps(state) {

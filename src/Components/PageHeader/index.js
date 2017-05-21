@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
 import NavBar from 'Components/NavBar';
 
 class PageHeader extends Component {

@@ -4,7 +4,8 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from 'Components/Loader';
 import { selectComicById } from 'Comics/selectors';
@@ -32,6 +33,11 @@ export default function withComicData(WrappedComponent) {
       }
     }
   }
+
+  ComicDetailContainer.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    comic: PropTypes.object.isRequired,
+  };
   
   function mapStateToProps(state, props){
     const loading = false;

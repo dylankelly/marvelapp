@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { doFetchComicsRequested } from './../actions';
 import { selectComics, comicsListLoading, comicsFilter } from './../selectors';
@@ -40,7 +41,7 @@ export class ComicsListContainer extends Component { // eslint-disable-line reac
 }
 
 ComicsListContainer.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
