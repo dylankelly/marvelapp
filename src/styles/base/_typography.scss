@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 /* Regular */
 @font-face {
     font-family: 'League Gothic';
@@ -51,5 +53,16 @@
 
 
 h1,h2,h3,h4,h5 {
-    font-family: 'League Gothic';
+  font-family: 'League Gothic';
+}
+
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+}
+
+strong {
+  font-weight: 800;
 }

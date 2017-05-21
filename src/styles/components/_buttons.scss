@@ -1,0 +1,35 @@
+.btn-marvel {
+  position: relative;
+
+  span {
+
+  }
+  &:before {
+    position: absolute;
+    top: 0;
+    content: " ";
+    width: 11px;
+    height: 37px;
+    left: -5px;
+    background-color: $brand-primary;
+    -webkit-transform: skew(-11deg,0);
+    -ms-transform: skew(-11deg,0);
+    transform: skew(-11deg,0);
+  }
+  &:after {
+    position: absolute;
+    top: -1px;
+    content: " ";
+    width: 11px;
+    height: 37px;
+    right: -5px;
+    background-color: $brand-primary;
+    -webkit-transform: skew(-11deg,0);
+    -ms-transform: skew(-11deg,0);
+    transform: skew(-11deg,0);
+
+  }
+  &:hover{
+    background-color: $brand-primary;
+  }
+}

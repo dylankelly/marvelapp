@@ -9,15 +9,15 @@ import { Link } from 'react-router-dom';
 
 function ComicListItem({comic}) {
   return (
-    <div className="comic_list_item col-xs-12 col-md-3">
+    <div className="list_item col-xs-12 col-md-3">
       <Link to={`/comics/${comic.id}`}>
-        <div className="comic_list_item__inner">
-          <div className="comic_list_item__thumb">
-            <div className="comic_list_item__thumb_border"></div>
-            <img className="comic_list_item__thumb_image" src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension} `} alt=""/>
+        <div className="list_item__inner">
+          <div className="list_item__thumb">
+            <div className="list_item__thumb_border"></div>
+            <img className="list_item__thumb_image" src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension} `} alt=""/>
           </div>
-          <div className="comic_list_item__desc">
-            <h4 className="comic_list_item__title">{comic.title}</h4>
+          <div className="list_item__desc">
+            <h4 className="list_item__title">{comic.title}</h4>
             {comic.creators.items.length > 0 && comic.creators.items
               .filter((author) => author.role === 'writer')
               .map((author) => {
@@ -28,8 +28,8 @@ function ComicListItem({comic}) {
                 )
               }
             )}
-            <a href="#" className="comic_list_item__link btn btn-primary">Go somewhere</a>
           </div>
+          <a href="#" className="list_item__link btn btn-primary btn-marvel"><span>View</span></a>
         </div>
       </Link>
     </div>

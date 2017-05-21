@@ -1,30 +1,32 @@
 import {
-  FETCH_COMICS_REQUESTED,
-  FETCH_COMICS_SUCCESS,
-  FETCH_COMICS_FAIL,
+  FETCH_CHARACTERS_REQUESTED,
+  FETCH_CHARACTERS_SUCCESS,
+  FETCH_CHARACTERS_FAIL,
 } from './actions';
 
 const initialState = {
   byId: {},
   ids: [],
-  filter: {},
+  filter: {
+    search: 'storm'
+  },
   loading: false,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_COMICS_REQUESTED:
+    case FETCH_CHARACTERS_REQUESTED:
       return {
         ...state,
         loading: true,
       }
-    case FETCH_COMICS_SUCCESS:
+    case FETCH_CHARACTERS_SUCCESS:
       return {
         ...state,
         loading: false,
         ...action.payload
       }
-    case FETCH_COMICS_FAIL:
+    case FETCH_CHARACTERS_FAIL:
     default:
       return state;
   }

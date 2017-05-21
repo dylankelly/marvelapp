@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import CharactersListContainer from './containers/CharactersListContainer'
+
 
 class CharactersList extends Component {
   render() {
     return (
-      <div >
-        <h2>character list</h2>
+      <div className="container">
+        <h2 className="page__title">Characters</h2>
+        <CharactersListContainer />
       </div>
     );
   }

@@ -6,9 +6,11 @@
  */
 import { take, fork, cancel } from 'redux-saga/effects';
 import rootComicsSaga from 'Comics/sagas';
+import rootCharactersSaga from 'Characters/sagas';
 
 const sagas = [
-  rootComicsSaga
+  rootComicsSaga,
+  rootCharactersSaga,
 ];
 
 export const CANCEL_SAGAS_HMR = 'CANCEL_SAGAS_HMR';

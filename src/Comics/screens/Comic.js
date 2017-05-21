@@ -8,7 +8,7 @@ class Comic extends Component {
     const comic = this.props.comic;
 
     return (
-      <div className="page">
+      <div className="page page-comic">
         <div className="page__head__nav">
           <div className="container">
             <Link to="/comics">back</Link>

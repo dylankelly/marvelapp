@@ -18,7 +18,16 @@
 }
 
 .page__head__nav {
-  background: darken($gray-darker, 50%);
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  a{
+    color: black;
+    font-family: "League Gothic";
+    text-transform: uppercase;
+    font-size: 1.5em;
+
+  }
 }
 
 .page__head-dark {

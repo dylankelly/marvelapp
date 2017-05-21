@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { doFetchComicsRequested } from './../actions';
-import { selectComics, comicsListLoading } from './../selectors';
+import { selectComics, comicsListLoading, comicsFilter } from './../selectors';
 import ComicListItem from './../components/ComicListItem';
 import { chunk } from 'lodash';
+import ListFilter from 'Comics/components/ListFilter';
+import Loader from 'Components/Loader';
 
 export class ComicsListContainer extends Component { // eslint-disable-line react/prefer-stateless-function
   
@@ -13,26 +15,28 @@ export class ComicsListContainer extends Component { // eslint-disable-line reac
 
   render() {
     const rows = chunk(this.props.comics, 4);
-    if (this.props.loading) {
-      return (
-        <h2>...loading</h2>
-      )
-    } else {
       return (
         <div>
-         {
-            rows.map((comics, index) => 
-              <div key={index} className="row">
-                {comics.map((comic) => 
-                  <ComicListItem key={comic.id} comic={comic} />
-                )}
-              </div>
-            )
+          <ListFilter dispatch={this.props.dispatch} filter={this.props.filter}/>
+          {this.props.loading ? 
+            <Loader />
+            :
+            <div>
+               {
+                  rows.map((comics, index) => 
+                    <div key={index} className="row">
+                      {comics.map((comic) => 
+                        <ComicListItem key={comic.id} comic={comic} />
+                      )}
+                    </div>
+                  )
+                }
+            </div>
           }
-        </div>
-      );    
-    }
+      </div>
+    );    
   }
+
 }
 
 ComicsListContainer.propTypes = {
@@ -42,9 +46,11 @@ ComicsListContainer.propTypes = {
 function mapStateToProps(state) {
   const comics = selectComics(state);
   const loading = comicsListLoading(state);
+  const filter = comicsFilter(state);
   return {
     comics,
     loading,
+    filter,
   };
 }
 
