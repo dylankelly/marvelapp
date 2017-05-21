@@ -11,7 +11,7 @@ import CharacterDetailContainer from 'Characters/containers/CharacterDetailConta
 import Loader from 'Components/Loader';
 
 function Character({character, loading}) {
-  if (loading) {
+  if (!loading) {
     return (
       <div className="page page-character">
         <div className="page__head page__head__nav">
