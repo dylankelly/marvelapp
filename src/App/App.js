@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import ComicsList from 'Comics/screens/ComicsList';
 import Comic from 'Comics/screens/Comic';
 import CharactersList from 'Characters/screens/CharactersList';

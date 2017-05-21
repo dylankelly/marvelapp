@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom'
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 
 import App from './App/App';

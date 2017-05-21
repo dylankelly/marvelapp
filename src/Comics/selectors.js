@@ -1,5 +1,4 @@
-import { createSelector } from 'reselect';
-
+// import { createSelector } from 'reselect';
 
 export const selectComics = (state) => {
   if(state.comics && state.comics.ids.length > 0){
